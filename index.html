@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LUMIÈRE | Salon & Spa</title>
+    <meta name="description" content="Premium high-end beauty salon with editorial and minimalist aesthetics." />
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&family=Montserrat:wght@200;300;400;500&display=swap" rel="stylesheet">
+
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              serif: ['"Cormorant Garamond"', 'serif'],
+              sans: ['"Montserrat"', 'sans-serif'],
+            },
+            colors: {
+              'lumiere': {
+                50: '#F9F8F6', // Off-white editorial
+                100: '#F2EFE9', // Light Beige
+                200: '#E6DFD5', // Nude
+                300: '#D4C5B5', // Darker Nude
+                400: '#BFA898', // Rosé/Brownish
+                800: '#4A3B32', // Chocolate
+                900: '#2C2420', // Dark Coffee / Soft Black
+              }
+            },
+            animation: {
+              'spin-slow': 'spin 10s linear infinite',
+              'shimmer': 'shimmer 2.5s infinite',
+              'ripple': 'ripple 0.6s linear',
+            },
+            keyframes: {
+              shimmer: {
+                '100%': { transform: 'translateX(100%)' },
+              },
+              ripple: {
+                '0%': { transform: 'scale(0)', opacity: '0.5' },
+                '100%': { transform: 'scale(4)', opacity: '0' },
+              }
+            }
+          }
+        }
+      }
+    </script>
+    <style>
+      /* Smooth scrolling */
+      html {
+        scroll-behavior: smooth;
+        scroll-padding-top: 100px;
+      }
+
+      /* Hide default cursor completely on desktop for ALL elements */
+      @media (min-width: 769px) {
+        *, *::before, *::after {
+          cursor: none !important;
+        }
+      }
+      
+      /* Restore default cursor on mobile devices */
+      @media (max-width: 768px) {
+        html, body, *, *::before, *::after {
+          cursor: auto !important; 
+        }
+      }
+
+      body {
+        background-color: #F9F8F6;
+        color: #2C2420;
+      }
+      
+      /* 3D Flip Card Utilities */
+      .perspective-1000 {
+        perspective: 1000px;
+      }
+      .preserve-3d {
+        transform-style: preserve-3d;
+      }
+      .backface-hidden {
+        backface-visibility: hidden;
+      }
+      .rotate-y-180 {
+        transform: rotateY(180deg);
+      }
+
+      /* Text Reveal Animation */
+      .reveal-text span {
+        display: inline-block;
+        opacity: 0;
+        transform: translateY(100%);
+        animation: revealText 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+      }
+
+      @keyframes revealText {
+        from {
+          opacity: 0;
+          transform: translateY(100%);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      /* Custom Scrollbar for a premium feel */
+      ::-webkit-scrollbar {
+        width: 8px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #F2EFE9;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #D4C5B5;
+        border-radius: 4px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #BFA898;
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "lucide-react": "https://esm.sh/lucide-react@^0.561.0",
+    "react/": "https://esm.sh/react@^19.2.3/",
+    "react": "https://esm.sh/react@^19.2.3",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.3/"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body>
+    <div id="root"></div>
+  <script type="module" src="/index.tsx"></script>
+</body>
+</html>
